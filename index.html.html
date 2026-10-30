@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌷 yêu dấu 🌷</title>
+
+<!-- Comfortaa -->
+<link https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap">
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family:'Comfortaa',sans-serif;
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#ffd6e7,#ffc2d1,#ffb3c6);
+    }
+
+    .card{
+        background:rgba(255,255,255,0.8);
+        backdrop-filter:blur(10px);
+        padding:40px;
+        border-radius:25px;
+        text-align:center;
+        width:90%;
+        max-width:500px;
+        box-shadow:0 8px 25px rgba(255,105,180,0.2);
+    }
+
+    h1{
+        color:#ff5c8a;
+        margin-bottom:20px;
+        font-size:2rem;
+    }
+
+    #message{
+        font-size:1.3rem;
+        color:#555;
+        min-height:80px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:15px;
+    }
+
+    button{
+        background:#ff7eb6;
+        color:white;
+        border:none;
+        padding:14px 28px;
+        border-radius:50px;
+        font-size:1rem;
+        font-weight:600;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        transform:translateY(-3px);
+        background:#ff5c9a;
+    }
+
+    .emoji{
+        font-size:1.5rem;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>🌸 from the bottom of my heart 🌸</h1>
+
+    <div id="message">
+        click to get some love from ngân  ✨
+    </div>
+
+    <button onclick="randomMessage()">
+        💖my love
+    </button>
+</div>
+
+<script>
+const messages = [
+    "🌷 you made my day!",
+    "💖 becoming your friend has healed me in so many ways.",
+    "🌈 ngân iu is always by your side.",
+    "🐰 no matter how far apart we are, my heart will always miss you.",
+    "✨ not a single word could ever describe how much our friendship really means to me.",
+    "🦋 you deserve a universe that gives you all the good and genuine things.",
+    "🌸 học bài đi các giáo sư, nhà giáo nhân dân, luật sư, đại sứ quán, phiên dịch cabin của tôi.",
+    "☁️ ngân iu nhà mình, iu những con vợ anh yêu ở ctb, iu những người bạn mới ở hnue và nhiều người nữa.",
+    "💐 đi ăn gà mạnh hoạch, ăn dookki, ăn xiên không sạch,.. điiii.",
+    "🍓 whether we’ve known each other for 1,000 days or just a single month, being your friend is a true honor for me!"
+];
+
+let remainingMessages = [...messages];
+
+function randomMessage() {
+
+    // the end
+if (remainingMessages.length === 0) {
+    document.getElementById("message").innerHTML =
+    "💌 thank you for coming into my life.<br><br>" +
+    "remember that i'm always here if you need a shoulder to lay onto 🌸";
+
+    createHearts();
+
+    // Khởi động lại danh sách thông điệp
+    remainingMessages = [...messages];
+
+    return;
+}
+    const randomIndex = Math.floor(Math.random() * remainingMessages.length);
+
+    document.getElementById("message").innerText =
+        remainingMessages[randomIndex];
+
+    remainingMessages.splice(randomIndex, 1);
+
+    createHearts();
+}</script>
+
+</body>
+</html>
